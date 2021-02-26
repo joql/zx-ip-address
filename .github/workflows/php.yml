@@ -10,11 +10,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Use Composer
+        uses: php-actions/composer@v5
+
       - name: List Files
         run: ls -alh
 
       - name: Install Vendor Packages
-        uses: php-actions/composer@v5
+
         run: COMPOSER=composer-phpunit.json && composer update
 
       - name: Start Tests
