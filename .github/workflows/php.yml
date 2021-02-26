@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@develop
+        uses: actions/checkout@v2
 
       - name: Install Vendor Packages
-        run: COMPOSER=composer-phpunit.json;composer install
+        run: COMPOSER=composer-phpunit.json && composer install
 
       - name: Start Tests
         run: ./vendor/bin/phpunit
