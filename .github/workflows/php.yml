@@ -14,6 +14,7 @@ jobs:
         run: ls -alh
 
       - name: Install Vendor Packages
+        uses: php-actions/composer@v5
         run: COMPOSER=composer-phpunit.json && composer update
 
       - name: Start Tests
