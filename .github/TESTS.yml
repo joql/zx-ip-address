@@ -1,0 +1,13 @@
+name: phpunit test
+on: [push, rull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Vendor Packages
+        run: composer install
+
+      - name: Start Unit Tests
+        run: ./vendor/bin/phpunit
