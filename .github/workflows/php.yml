@@ -16,8 +16,13 @@ jobs:
       - name: List Files
         run: ls -alh
 
-      - name: Install Vendor Packages
+      - name: Make vendor Dir
+        run: mkdir vendor
 
+      - name: Permission
+        run: chmod 777 vendor
+
+      - name: Install Vendor Packages
         run: COMPOSER=composer-phpunit.json && composer update
 
       - name: Start Tests
