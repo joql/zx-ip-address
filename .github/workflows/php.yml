@@ -10,6 +10,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: List Files
+        run: ls -alh
+
       - name: Install Vendor Packages
         run: COMPOSER=composer-phpunit.json && composer install
 
