@@ -1,0 +1,14 @@
+name: phpunit test
+on: [push, rull_request]
+jobs:
+  test:
+    name: phpunit
+    runs-on: ubuntu-latest
+    steps:
+      - name: composer install
+        run: composer install
+        env:
+
+      - name: test
+        run: ./vendor/bin/phpunit
+        env:
