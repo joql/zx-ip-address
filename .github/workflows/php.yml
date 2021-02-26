@@ -14,7 +14,7 @@ jobs:
         run: ls -alh
 
       - name: Install Vendor Packages
-        run: COMPOSER=composer-phpunit.json && composer install
+        run: COMPOSER=composer-phpunit.json && composer update
 
       - name: Start Tests
         run: ./vendor/bin/phpunit
