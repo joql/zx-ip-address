@@ -1,0 +1,20 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Vendor Packages
+      run: COMPOSER=composer-phpunit.json;composer install
+
+    - name: Start Tests
+      run: ./vendor/bin/phpunit
